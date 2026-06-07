@@ -1,0 +1,14 @@
+[workspace]
+members = [
+    "mpu9250",  # driver for mpu9250
+    "examples-stm32",
+
+]
+resolver = "2"
+
+[profile.release]
+lto = true
+opt-level = "s"
+
+[profile.dev]
+# 可以在这里添加 dev profile 的配置

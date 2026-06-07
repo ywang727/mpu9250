@@ -1,0 +1,12 @@
+[target.thumbv7em-none-eabihf]
+runner = "probe-rs run --chip STM32F411CE --speed 4000 "
+
+[build]
+target = "thumbv7em-none-eabihf"
+
+[env]
+DEFMT_LOG = { value = "info", force = true }
+
+[alias]
+run-rtt = "run"
+
