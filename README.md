@@ -25,11 +25,22 @@ This crate is optimized for high-performance and low-latency environments (such 
 
 ### 1. Cargo.toml Setup
 
-Add the following to your `Cargo.toml`:
+You can add the dependency to your `Cargo.toml` in two ways:
+
+#### Option A: Direct Git Dependency (Recommended)
+Add the driver directly from the Git repository. Since this repository is a Cargo workspace, Cargo will automatically traverse the workspace members to locate the crate named `mpu9250`:
 
 ```toml
 [dependencies]
-mpu9250 = { path = "path/to/mpu9250", features = ["async", "defmt"] }
+mpu9250 = { git = "https://github.com/ywang727/mpu9250.git", features = ["async", "defmt"] }
+```
+
+#### Option B: Local Path Dependency
+Download or clone the repository locally and reference the driver's nested crate path:
+
+```toml
+[dependencies]
+mpu9250 = { path = "path/to/mpu9250/mpu9250", features = ["async", "defmt"] }
 ```
 
 Available Features:
